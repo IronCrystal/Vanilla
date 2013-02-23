@@ -53,7 +53,7 @@ public class PoweredMinecart extends MinecartBase {
 	@Override
 	public void onAttached() {
 		super.onAttached();
-		getOwner().getNetwork().setEntityProtocol(VanillaPlugin.VANILLA_PROTOCOL_ID, new MinecartObjectEntityProtocol(ObjectType.POWERED_MINECART));
+		getOwner().getNetwork().setEntityProtocol(VanillaPlugin.VANILLA_PROTOCOL_ID, new MinecartObjectEntityProtocol(ObjectType.MINECART));
 		if (getAttachedCount() == 1) {
 			getOwner().add(DeathDrops.class).addDrop(new ItemStack(VanillaMaterials.FURNACE, 1));
 		}

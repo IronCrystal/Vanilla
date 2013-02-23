@@ -48,7 +48,7 @@ public class StorageMinecart extends MinecartBase {
 	@Override
 	public void onAttached() {
 		super.onAttached();
-		getOwner().getNetwork().setEntityProtocol(VanillaPlugin.VANILLA_PROTOCOL_ID, new MinecartObjectEntityProtocol(ObjectType.STORAGE_MINECART));
+		getOwner().getNetwork().setEntityProtocol(VanillaPlugin.VANILLA_PROTOCOL_ID, new MinecartObjectEntityProtocol(ObjectType.MINECART));
 		if (getAttachedCount() == 1) {
 			getOwner().add(DeathDrops.class).addDrop(new ItemStack(VanillaMaterials.CHEST, 1));
 		}

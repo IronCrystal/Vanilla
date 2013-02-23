@@ -37,7 +37,7 @@ import org.spout.vanilla.protocol.entity.object.ObjectType;
 public class MinecartObjectEntityProtocol extends ObjectEntityProtocol {
 	public MinecartObjectEntityProtocol(ObjectType type) {
 		super(type);
-		if (!ObjectType.MINECART.equals(type) && !ObjectType.POWERED_MINECART.equals(type) && !ObjectType.STORAGE_MINECART.equals(type)) {
+		if (!ObjectType.MINECART.equals(type)) {
 			throw new IllegalStateException("Invalid minecart type!");
 		}
 	}
@@ -48,6 +48,9 @@ public class MinecartObjectEntityProtocol extends ObjectEntityProtocol {
 		params.add(new Parameter<Integer>(Parameter.TYPE_INT, 17, 0)); // Unknown flag; initialized to 0. (Probably time since last collision)
 		params.add(new Parameter<Integer>(Parameter.TYPE_INT, 18, 1)); // Unknown flag; initialized to 1. (Probably acceleration)
 		params.add(new Parameter<Integer>(Parameter.TYPE_INT, 19, 0)); // Damage taken; breaks at 40.
+		params.add(new Parameter<Integer>(Parameter.TYPE_INT, 20, 0)); // Block ID to display in the minecart
+		params.add(new Parameter<Integer>(Parameter.TYPE_INT, 21, 6)); // Display Data, where to display the block, 6 is default.
+		params.add(new Parameter<Integer>(Parameter.TYPE_BYTE, 22, 0)); // 0 == Block Display off, 1 == Block Display on
 		return params;
 	}
 }
